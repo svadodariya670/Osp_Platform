@@ -1,0 +1,245 @@
+:root {
+    --accent: #4f46e5;
+    --muted: #6b7280;
+    --card-radius: 14px;
+    --primary-gradient: linear-gradient(135deg, #4f46e5, #3b82f6);
+    --success-gradient: linear-gradient(135deg, #10b981, #34d399);
+    --warning-gradient: linear-gradient(135deg, #f59e0b, #facc15);
+    --danger-gradient: linear-gradient(135deg, #ef4444, #f87171);
+}
+
+/* General Body */
+body {
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    font-family: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color: #374151;
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(90deg, #434343 0%, #232526 100%) !important;
+    border-bottom: 2px solid #1c1c1c;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: all 0.3s;
+    z-index: 1030;
+}
+.navbar .nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    opacity: 0.85;
+    transition: 0.3s;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #ffd700 !important;
+    opacity: 1;
+}
+.navbar .btn-warning {
+    background-color: #ffc107;
+    color: #222;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+.navbar .btn-warning:hover { background-color: #e0a800; }
+.navbar .btn-success {
+    background-color: #178a50;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    transition: 0.3s;
+}
+.navbar .btn-success:hover { background-color: #11693b; }
+
+/* Card Styling */
+.card-custom, .card-hover {
+    border-radius: var(--card-radius);
+    box-shadow: 0 6px 20px rgba(15,23,42,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    background-color: #fff;
+}
+.card-custom:hover, .card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.card-gradient {
+    color: #fff;
+}
+.card-gradient.bg-primary { background: var(--primary-gradient); }
+.card-gradient.bg-success { background: var(--success-gradient); }
+.card-gradient.bg-warning { background: var(--warning-gradient); }
+.card-gradient.bg-danger { background: var(--danger-gradient); }
+
+/* Card Image Zoom */
+.card-service img {
+    transition: transform 0.3s;
+    border-radius: 12px 12px 0 0;
+}
+.card-service:hover img {
+    transform: scale(1.05);
+}
+
+/* Profile Bubble for Recent Activity */
+.profile-bubble {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+/* Recent Activity List */
+.recent-list .list-group-item {
+    border: none;
+    padding: 0.85rem 1rem;
+    font-size: 15px;
+}
+.badge-status {
+    font-size: 12px;
+    border-radius: 8px;
+    padding: 0.35rem 0.55rem;
+}
+
+/* Counter Animation */
+.counter { font-weight: 700; font-size: 2rem; }
+
+/* Quick Stats Charts */
+canvas { width: 100% !important; max-height: 200px; }
+
+/* Section Titles */
+.section-title {
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    color: #333;
+}
+.section-title::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: #7bdcb5;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Buttons */
+.action-btn .btn {
+    border-radius: 10px;
+    min-width: 150px;
+    transition: 0.3s;
+}
+.action-btn .btn.glow:hover {
+    box-shadow: 0 0 15px rgba(79,70,229,0.7);
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(90deg, #434343 0%, #232526 100%);
+    color: #fff;
+    padding: 40px 0 20px 0;
+    margin-top: 40px;
+}
+.footer h5 { color: #fff; margin-bottom: 20px; }
+.footer p, .footer li, .footer a { color: #fff; text-decoration: none; }
+.footer a:hover { color: #ffd700; text-decoration: underline; }
+.social-links a { font-size: 1.2rem; margin-right: 10px; transition: 0.3s; }
+.social-links a:hover { color: #ffd700; }
+
+/* Tables */
+.table-custom {
+    border-radius: var(--card-radius);
+    overflow: hidden;
+}
+.table-custom th { background-color: #f3f4f6; color: #374151; }
+.table-custom td, .table-custom th { padding: 12px 15px; }
+
+/* Input and Form */
+input, select, textarea {
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    padding: 8px 12px;
+}
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 6px rgba(79,70,229,0.3);
+}
+
+/* Make all card images uniform */
+.card-uniform { border-radius: 12px; overflow: hidden; }
+.card-img-uniform { height: 200px; width: 100%; object-fit: cover; }
+.card-uniform .card-body { padding: 15px; }
+
+/* Chart specific adjustments */
+/* === Improved Booking Chart Styling === */
+.chart-container {
+    width: 100%;
+    height: 250px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.chart-legend {
+    margin-top: 15px;
+    font-weight: 500;
+    color: #374151;
+    font-size: 0.95rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.legend-dot {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+/* For smaller devices */
+@media (max-width: 768px) {
+    .chart-container {
+        width: 320px;
+        height: 320px;
+    }
+    .legend-item {
+        margin: 4px 6px;
+        font-size: 0.85rem;
+    }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stat-icon { width: 48px; height: 48px; font-size: 20px; }
+    .action-btn .btn { width: 100%; margin-bottom: 10px; }
+    .recent-list .list-group-item { font-size: 14px; padding: 0.7rem 1rem; }
+    .chart-wrapper { width: 300px; height: 300px; }
+}
+.custom-table thead th {
+            background: linear-gradient(180deg, #2c3e50, #34495e);
+            color: #fff;
+}
+@media (max-width: 768px) {
+    .chart-container {
+        height: 320px;  /* slightly smaller on phones */
+    }
+}
